@@ -15,7 +15,7 @@ $m_b_version=dmidecode -s baseboard-version
 $m_b_numb=dmidecode -s baseboard-serial-number
 $s_s_numb=dmidecode -s system-serial-number
 $hostname=uname -n
-
+$instldate=sudo head -n1 /var/log/installer/syslog
 $os_distrib=cat /etc/issue
 $kernel=uname -r
 
@@ -31,7 +31,7 @@ echo "--- System ---" >> $OUTPUT
 
 echo "OS Distribution​ : $os_distrib" >> $OUTPUT
 echo "Kernel version​ : $kernel" >> $OUTPUT
-echo "Installation date​ : xxxx" >> $OUTPUT
+echo "Installation date​ : $instldate" >> $OUTPUT
 echo "* Hostname: $hostname" >> $OUTPUT
 echo "* Run date and time: $(date)" >> $OUTPUT
 echo "Processes running​ : 56684User logged in​ : 665">> $OUTPUT
