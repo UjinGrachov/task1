@@ -14,7 +14,7 @@ $m_b_name=dmidecode -s baseboard-product-name
 $m_b_version=dmidecode -s baseboard-version
 $m_b_numb=dmidecode -s baseboard-serial-number
 $s_s_numb=dmidecode -s system-serial-number
-
+$hostname=uname -n
 
 $os_distrib=cat /etc/issue
 $kernel=uname -r
@@ -23,7 +23,7 @@ $kernel=uname -r
 echo "--- Hardware ---" >> $OUTPUT
 
 echo "* CPU​ : $cpu" >> $OUTPUT
-echo "* RAM: $(ram)" >> $OUTPUT
+echo "* RAM: $mem_mb Mb" >> $OUTPUT
 echo "* Motherboard​: $m_b_numb / $m_b_version / $m_b_numb" >> $OUTPUT
 echo "* System Serial Number: $s_s_numb" >> $OUTPUT
 
@@ -32,7 +32,7 @@ echo "--- System ---" >> $OUTPUT
 echo "OS Distribution​ : $os_distrib" >> $OUTPUT
 echo "Kernel version​ : $kernel" >> $OUTPUT
 echo "Installation date​ : xxxx" >> $OUTPUT
-echo "* Hostname: $(hostname)" >> $OUTPUT
+echo "* Hostname: $hostname" >> $OUTPUT
 echo "* Run date and time: $(date)" >> $OUTPUT
 echo "Processes running​ : 56684User logged in​ : 665">> $OUTPUT
 
